@@ -1,10 +1,6 @@
 <?php
 
-require 'app/Models/Job.php';
-require 'app/Models/Project.php';
-require_once 'app/Models/Printable.php';
-
-require 'lib1/Project.php';
+require_once 'vendor/autoload.php';
 
 use App\Models\{Job, Project, Printable};
 
@@ -28,8 +24,6 @@ $jobs = [
 $projects = [
     $project1
 ];
-
-$projectLib = new Lib1\Project();
 
 function printElement(Printable $job) {
     if($job->visible == false) {
