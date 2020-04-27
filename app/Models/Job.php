@@ -2,12 +2,11 @@
 
 namespace App\Models;
 
-class Job extends BaseElement {
+use Illuminate\Database\Eloquent\Model;
 
-    public function __construct($title, $description) {
-        $newTitle = 'Job: '.$title;
-        parent::__construct($newTitle, $description);
-    }
+class Job extends Model {
+
+    protected $table = 'jobs';
 
     public function getDurationAsString() {
         $years = floor($this->months/12);

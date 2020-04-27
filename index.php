@@ -1,4 +1,28 @@
 <?php
+
+require_once 'vendor/autoload.php';
+
+use Illuminate\Database\Capsule\Manager as Capsule;
+use App\Models\Job;
+
+$capsule = new Capsule;
+
+$capsule->addConnection([
+    'driver'    => 'mysql',
+    'host'      => 'localhost',
+    'database'  => 'cursophp',
+    'username'  => 'root',
+    'password'  => 'root',
+    'charset'   => 'utf8',
+    'collation' => 'utf8_unicode_ci',
+    'prefix'    => '',
+]);
+
+  // Make this Capsule instance available globally via static methods... (optional)
+  $capsule->setAsGlobal();
+  // Setup the Eloquent ORM... (optional; unless you've used setEventDispatcher())
+  $capsule->bootEloquent();
+
   require_once('jobs.php');
 
   $name = 'Mayra Aceves';
@@ -61,11 +85,6 @@
         </div>
         <div>
             <h3 class="border-bottom-gray">Projects</h3>
-            <?php 
-            for($idx = 0; $idx < count($projects); $idx++) {
-              printElement($projects[$idx]);
-            }
-            ?>
             <div class="project">
                 <h5>Project X</h5>
                 <div class="row">
