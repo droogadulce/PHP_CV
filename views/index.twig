@@ -36,6 +36,11 @@
                 <h5>{{ job.title }}</h5>
                 <p>{{ job.description }}</p>
                 <p>{{ job.durationJob }}</p>
+                {% if job.imagePath == '' %}
+                  <img src="uploads/job-icon.png" width="50px" />
+                {% else %}
+                  <img src="uploads/{{job.imagePath}}" width="50px" />
+                {% endif %}
                 <strong>Achievements:</strong>
                 <ul>
                   <li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>

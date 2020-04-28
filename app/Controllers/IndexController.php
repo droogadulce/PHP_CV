@@ -17,6 +17,9 @@ class IndexController extends BaseController {
 
         foreach ($jobs as $job){
             $job->durationJob = $job->getDurationAsString();
+            if (!file_exists("uploads/$job->imagePath")) {
+                $job->imagePath = '';
+            }
         }
 
         return $this->renderHTML('index.twig', [

@@ -5,7 +5,7 @@
     <div class="alert alert-primary" role="alert">
         {{ responseMessage }}
     </div>
-    <form action="/PHP_CV/jobs/add" method="post">
+    <form action="/PHP_CV/jobs/add" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="title">Title</label>
             <input type="text" class="form-control" id="title" name="title">
@@ -13,6 +13,10 @@
         <div class="form-group">
             <label for="description">Description</label>
             <input type="text" class="form-control" id="description" name="description">
+        </div>
+        <div class="form-group">
+            <label for="logo">File</label>
+            <input type="file" class="form-control" id="logo" name="logo">
         </div>
         <button type="submit" class="btn btn-primary">Save</button>
     </form>
